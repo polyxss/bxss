@@ -31,7 +31,7 @@ You need to install the [`docker-compose`](https://docs.docker.com/compose/insta
 
 Use our scripts [start-mcts-with-id.sh](./start-mcts-with-id.sh) and [stop.sh](./stop.sh) or the commands below.
 The start script takes a run identifier string as a parameter and starts generation as a daemon process (due to the `-d` flag).
-The predefined start values in [docker-compose.yml](./docker-compose.yml) require a total of 500 testbed calls and should take about 15 minutes to finish.
+The predefined start values in [docker-compose.yml](./docker-compose.yml) require a total of 500 testbed calls and should take **about 15 minutes** to finish. Note, that the default parameters are optimized for testing the whole process and will most likely not yield very good polyglots after such a short runtime.
 For even faster runtime for resting, refer to the end of the [GENERATION](#generation) section.
 
 ```bash
@@ -63,8 +63,8 @@ data/out/runs
     └── try-1
         ├── best-polyglot
         │   ├── bestOutput-0000000000  # intermediary
-        │   └── bestOutput-...
-		│   ├── bestOutput-00000final  # final 1st polyglot
+        │   |── bestOutput-...
+		│   └── bestOutput-00000final  # final 1st polyglot
         └── tree  # internal output
 ```
 
