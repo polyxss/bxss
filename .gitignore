@@ -1,3 +1,18 @@
+*.sh
+!start-mcts-with-id.sh
+!stop.sh
+
+.idea/
+*/lib/
+.env
+secret-*
+
+mcts/google_firing_range.js
+mcts/google_tests.js
+mcts/tester.js
+
+*.tmp/
+
 *.swp
 *.idx
 *.aux
@@ -19,6 +34,7 @@ out/
 res/
 tmp/
 paper.pdf
-package-lock.json
 _minted*/
 plots/*.pdf
+output.txt
+output.json

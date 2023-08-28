@@ -1,6 +1,18 @@
 <!doctype html>
-<html>
+<html lang="">
+    <head>
+        <title></title>
+        <script nonce="1337">
+            // Prepare DOM XSS
+            location.search.substring(1).split("&").forEach(function(part) {
+                let item = part.split("=");
+                if (item[0] === "payload") {
+                    payload = part.substring("payload=".length);
+                }
+            });
+        </script>
+    </head>
     <body>
         <%- content %>
-    <body>
+    </body>
 </html>

@@ -1,0 +1,31 @@
+version: '2.2'
+
+services:
+  testbed:
+    restart: on-failure
+    init: true
+    build:
+      context: .
+      dockerfile: testbed/Dockerfile
+
+  mcts:
+    restart: on-failure
+    init: true
+    environment:
+      - NO_SANDBOX=${NO_SANDBOX:-0}
+      - TESTBED_URL=http://testbed:8080
+      - REMOTE_SCRIPT_URL=http://testbed:8080/xss.js
+      - RUN_IDENTIFIER=${RUN_IDENTIFIER}
+    build:
+      context: .
+      args:
+      - USERID=${USERID}
+      - GROUPID=${GROUPID}
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/usr/src/data
+    depends_on:
+      - testbed
+    links:
+      - testbed
+    command: "main.ts --runnerType MCTS --tokenType XSS_TOKENS --maxRootDepth=10 --maxGenerationTries=1 --simulationsPerAction=50"
