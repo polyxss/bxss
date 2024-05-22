@@ -1,5 +1,3 @@
-version: '2.2'
-
 services:
   testbed:
     restart: on-failure
