@@ -6,8 +6,14 @@ services:
       context: .
       dockerfile: testbed/Dockerfile
 
-  mcts:
+  firingrange:
     restart: on-failure
+    init: true
+    image: 0xshyam/firingrange:10
+    logging:
+      driver: none
+
+  runner:
     init: true
     environment:
       - NO_SANDBOX=${NO_SANDBOX:-0}
@@ -26,4 +32,5 @@ services:
       - testbed
     links:
       - testbed
-    command: "main.ts --runnerType MCTS --tokenType XSS_TOKENS --maxRootDepth=10 --maxGenerationTries=1 --simulationsPerAction=50"
+      - firingrange
+    command: ${COMMAND:-"polytest.ts /usr/src/data/example.json /usr/src/data/polytest"}

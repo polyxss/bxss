@@ -30,7 +30,6 @@ mcts/tester.js
 *.fdb_latexmk
 .DS_Store
 node_modules/
-out/
 res/
 tmp/
 paper.pdf

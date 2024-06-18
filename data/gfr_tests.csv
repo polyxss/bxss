@@ -1,0 +1,112 @@
+test_id,path,action,category
+1,/address/location.hash/assign#,VISIT,Address DOM XSS
+2,/address/location.hash/eval#,VISIT,Address DOM XSS
+3,/address/location.hash/replace#,VISIT,Address DOM XSS
+4,/address/location.hash/setTimeout#,VISIT,Address DOM XSS
+5,/address/location.hash/function#,VISIT,Address DOM XSS
+6,/address/location.hash/onclickSetAttribute#,CLICK_DIV_TAG,Address DOM XSS
+7,/address/location.hash/onclickAddEventListener#,CLICK_DIV_TAG,Address DOM XSS
+8,/address/location.hash/jshref#,CLICK_A_TAG,Address DOM XSS
+9,/address/location.hash/inlineevent#,CLICK_DIV_TAG,Address DOM XSS
+10,/address/location.hash/formaction#,CLICK_INPUT_TAG,Address DOM XSS
+31,/dom/toxicdom/document/cookie_set/eval,COOKIE,DOM XSS
+32,/dom/toxicdom/document/cookie_set/innerHtml,COOKIE,DOM XSS
+33,/dom/toxicdom/document/cookie_set/documentWrite,COOKIE,DOM XSS
+34,/dom/toxicdom/document/cookie/eval,COOKIE2,DOM XSS
+38,/dom/toxicdom/window/name/eval,WINDOW_NAME,DOM XSS
+39,/dom/toxicdom/window/name/innerHtml,WINDOW_NAME,DOM XSS
+40,/dom/toxicdom/window/name/documentWrite,WINDOW_NAME,DOM XSS
+41,/dom/toxicdom/localStorage/array/eval,LOCAL_STORAGE,DOM XSS
+42,/dom/toxicdom/localStorage/function/eval,LOCAL_STORAGE,DOM XSS
+43,/dom/toxicdom/localStorage/function/innerHtml,LOCAL_STORAGE,DOM XSS
+44,/dom/toxicdom/localStorage/function/documentWrite,LOCAL_STORAGE,DOM XSS
+45,/dom/toxicdom/localStorage/property/documentWrite,LOCAL_STORAGE,DOM XSS
+46,/dom/toxicdom/external/localStorage/array/eval,LOCAL_STORAGE,DOM XSS
+47,/dom/toxicdom/external/localStorage/function/eval,LOCAL_STORAGE,DOM XSS
+48,/dom/toxicdom/sessionStorage/function/innerHtml,SESSION_STORAGE,DOM XSS
+49,/dom/toxicdom/sessionStorage/array/eval,SESSION_STORAGE,DOM XSS
+50,/dom/toxicdom/sessionStorage/function/eval,SESSION_STORAGE,DOM XSS
+51,/dom/toxicdom/external/sessionStorage/function/innerHtml,SESSION_STORAGE,DOM XSS
+52,/dom/toxicdom/sessionStorage/function/documentWrite,SESSION_STORAGE,DOM XSS
+53,/dom/toxicdom/sessionStorage/property/documentWrite,SESSION_STORAGE,DOM XSS
+54,/dom/toxicdom/external/sessionStorage/array/eval,SESSION_STORAGE,DOM XSS
+55,/dom/toxicdom/external/sessionStorage/function/eval,SESSION_STORAGE,DOM XSS
+56,/dom/toxicdom/external/sessionStorage/function/documentWrite,SESSION_STORAGE,DOM XSS
+57,/dom/toxicdom/external/sessionStorage/property/documentWrite,SESSION_STORAGE,DOM XSS
+58,/dom/toxicdom/postMessage/eval,POST_MESSAGE,DOM XSS
+59,/dom/toxicdom/postMessage/innerHtml,JSON_HTML_MESSAGE,DOM XSS
+61,/dom/toxicdom/postMessage/complexMessageDocumentWriteEval,COMPLEX_MESSAGE,DOM XSS
+64,/dom/eventtriggering/document/formSubmission/eval,FORM_WITH_INPUT,DOM XSS
+65,/dom/eventtriggering/document/formSubmission/innerHtml,FORM_WITH_INPUT,DOM XSS
+66,/dom/eventtriggering/document/formSubmission/documentWrite,FORM_WITH_INPUT,DOM XSS
+67,/dom/eventtriggering/document/inputTyping/eval,TYPING_EVENT,DOM XSS
+68,/dom/eventtriggering/document/inputTyping/innerHtml,TYPING_EVENT,DOM XSS
+69,/dom/eventtriggering/document/inputTyping/documentWrite,TYPING_EVENT,DOM XSS
+71,/dom/dompropagation#,VISIT,DOM XSS
+72,/escape/serverside/escapeHtml/tagname?q=,VISIT,Escaped XSS
+74,/escape/serverside/escapeHtml/attribute_unquoted?q=,CLICK_TAG_TAG,Escaped XSS
+75,/escape/serverside/escapeHtml/attribute_singlequoted?q=,CLICK_TAG_TAG,Escaped XSS
+76,/escape/serverside/escapeHtml/attribute_quoted?q=,CLICK_TAG_TAG,Escaped XSS
+77,/escape/serverside/escapeHtml/attribute_name?q=,CLICK_TAG_TAG,Escaped XSS
+78,/escape/serverside/escapeHtml/js_assignment?q=,VISIT,Escaped XSS
+80,/escape/serverside/escapeHtml/js_eval?q=,VISIT,Escaped XSS
+82,/escape/serverside/escapeHtml/js_quoted_string?q=,VISIT,Escaped XSS
+83,/escape/serverside/escapeHtml/js_singlequoted_string?q=,VISIT,Escaped XSS
+84,/escape/serverside/escapeHtml/js_slashquoted_string?q=,VISIT,Escaped XSS
+85,/escape/serverside/escapeHtml/js_comment?q=,VISIT,Escaped XSS
+89,/escape/serverside/escapeHtml/css_import?q=,VISIT,Escaped XSS
+90,/escape/js/escape?q=,VISIT,Escaped XSS
+91,/escape/js/encodeURIComponent?q=,VISIT,Escaped XSS
+92,/escape/js/html_escape?q=,VISIT,Escaped XSS
+93,/reflected/parameter/body?q=,VISIT,Reflected XSS
+94,/reflected/parameter/head?q=,VISIT,Reflected XSS
+95,/reflected/parameter/title?q=,VISIT,Reflected XSS
+96,/reflected/parameter/body_comment?q=,VISIT,Reflected XSS
+97,/reflected/parameter/tagname?q=,VISIT,Reflected XSS
+98,/reflected/parameter/attribute_unquoted?q=,VISIT,Reflected XSS
+99,/reflected/parameter/attribute_singlequoted?q=,VISIT,Reflected XSS
+100,/reflected/parameter/attribute_quoted?q=,VISIT,Reflected XSS
+101,/reflected/parameter/attribute_name?q=,VISIT,Reflected XSS
+102,/reflected/parameter/body/400?q=,VISIT,Reflected XSS
+103,/reflected/parameter/body/401?q=,VISIT,Reflected XSS
+104,/reflected/parameter/body/403?q=,VISIT,Reflected XSS
+105,/reflected/parameter/body/404?q=,VISIT,Reflected XSS
+106,/reflected/parameter/body/500?q=,VISIT,Reflected XSS
+107,/reflected/parameter/iframe_attribute_value?q=,VISIT,Reflected XSS
+108,/reflected/parameter/iframe_srcdoc?q=,VISIT,Reflected XSS
+109,/reflected/parameter/textarea?q=,VISIT,Reflected XSS
+110,/reflected/parameter/textarea_attribute_value?q=,VISIT,Reflected XSS
+111,/reflected/parameter/noscript?q=,VISIT,Reflected XSS
+112,/reflected/parameter/style_attribute_value?q=,VISIT,Reflected XSS
+113,/reflected/parameter/css_style?q=,VISIT,Reflected XSS
+114,/reflected/parameter/css_style_value?q=,VISIT,Reflected XSS
+115,/reflected/parameter/css_style_font_value?q=,VISIT,Reflected XSS
+116,/reflected/escapedparameter/js_eventhandler_unquoted/UNQUOTED_ATTRIBUTE?q=,CLICK_DIV_TAG,Reflected XSS
+117,/reflected/escapedparameter/js_eventhandler_quoted/DOUBLE_QUOTED_ATTRIBUTE?q=,CLICK_DIV_TAG,Reflected XSS
+118,/reflected/escapedparameter/js_eventhandler_singlequoted/SINGLE_QUOTED_ATTRIBUTE?q=,CLICK_DIV_TAG,Reflected XSS
+119,/reflected/parameter/js_assignment?q=,VISIT,Reflected XSS
+120,/reflected/parameter/js_eval?q=,VISIT,Reflected XSS
+121,/reflected/parameter/js_quoted_string?q=,VISIT,Reflected XSS
+122,/reflected/parameter/js_singlequoted_string?q=,VISIT,Reflected XSS
+123,/reflected/parameter/js_slashquoted_string?q=,VISIT,Reflected XSS
+124,/reflected/parameter/js_comment?q=,VISIT,Reflected XSS
+125,/reflected/parameter/attribute_script?q=,VISIT,Reflected XSS
+128,/reflected/parameter/json?q=,VISIT,Reflected XSS
+129,/reflected/parameter/form,FORM_WITH_INPUT,Reflected XSS
+130,/reflected/filteredcharsets/body/SpaceDoubleQuoteSlashEquals?q=,VISIT,Reflected XSS
+131,/reflected/filteredcharsets/attribute_unquoted/DoubleQuoteSinglequote?q=,CLICK_TAG_TAG,Reflected XSS
+132,/reflected/filteredstrings/body/caseSensitive/script?q=,VISIT,Reflected XSS
+133,/reflected/filteredstrings/body/caseSensitive/SCRIPT?q=,VISIT,Reflected XSS
+134,/reflected/filteredstrings/body/caseInsensitive/script?q=,VISIT,Reflected XSS
+148,/tags/expression?q=,VISIT,Tag based XSS
+149,/tags/multiline?q=,VISIT,Tag based XSS
+150,/urldom/location/hash/a.href#,CLICK_A_TAG,URL-based DOM XSS
+151,/urldom/location/hash/document.location#,VISIT,URL-based DOM XSS
+152,/urldom/location/hash/form.action#,FORM_URL_PARAM,URL-based DOM XSS
+153,/urldom/location/hash/iframe.src#,VISIT,URL-based DOM XSS
+154,/urldom/location/hash/input.formaction#,FORM_URL_PARAM,URL-based DOM XSS
+156,/urldom/location/search/area.href?,CLICK_AREA_TAG,URL-based DOM XSS
+157,/urldom/location/search/svg.a?,CLICK_A_TAG,URL-based DOM XSS
+158,/urldom/location/search/button.formaction?,CLICK_BUTTON,URL-based DOM XSS
+159,/urldom/location/search/location.assign?,VISIT,URL-based DOM XSS
+160,/urldom/location/search/frame.src?,VISIT,URL-based DOM XSS

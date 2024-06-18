@@ -5,9 +5,13 @@ import { FiringRangeTesterFactory } from "./tester/google_firing_range";
 import { TESTS } from "./tester/google_tests";
 
 interface Polyglot {
-	payload: string;
+	id?: number;
+    payload: string;
 }
 
+interface Polyglots {
+    data: Polyglot[];
+}
 
 async function main() {
 	if (process.argv.length !== 4) {
@@ -21,13 +25,27 @@ async function main() {
 	console.assert(tsnode.endsWith("ts-node"), "ts-node assertion");
 	console.assert(inFile.endsWith(".json"), "JSON assertion");
 	console.assert(fs.lstatSync(cacheDir).isDirectory(), "directory assertion");
+	console.assert(fs.lstatSync(inFile), "file assertion");
 
 	const filename = path.basename(inFile, path.extname(inFile));
+	console.log("Start", scriptName);
+	console.log("Evaluating polyglot(s) from:", inFile);
 
 	const rawData = fs.readFileSync(inFile, { encoding: "utf-8" });
-	const polyglot: Polyglot = JSON.parse(rawData);
+	if (filename.endsWith("final-polyglots")) {
+		const polyglots: Polyglots = JSON.parse(rawData);
+		for (const item of polyglots.data) {
+			await processPayload(item.payload, firingRangeUrl, cacheDir, filename + item.id);
+		}
+	} else {
+		const polyglot: Polyglot = JSON.parse(rawData);
+		await processPayload(polyglot.payload, firingRangeUrl, cacheDir, filename);
+	}
+}
 
-	const gfrTests = TESTS(firingRangeUrl);
+async function processPayload(payload: string, firingRangeUrl: string, cacheDir: string, filename: string) {
+	console.log("Evaluating", payload)
+    const gfrTests = TESTS(firingRangeUrl);
 
 	const factory = new FiringRangeTesterFactory();
 
@@ -35,24 +53,22 @@ async function main() {
 	// the simplest callback to print the current test ID: (x) => {console.log(x)}
 	const firingRangeTester = await factory.create(gfrTests, () => undefined);
 
-	console.log("Start", scriptName);
-	console.log("Evaluating payload from:", inFile);
+    const gfrDist = await firingRangeTester.testAll(payload);
+    const testResult = gfrDist.toArray();
 
-	const gfrDist = await firingRangeTester.testAll(polyglot.payload);
-	const testResult = gfrDist.toArray();
-
-	const score = testResult.reduce((a: number, b: number) => a + b, 0);
+    const score = testResult.reduce((a: number, b: number) => a + b, 0);
 	const scoreStr = `Successful tests: ${score}/${gfrTests.length}`
 	console.log(scoreStr);
 
 	const evaluatedPolyglot = {
-		payload: polyglot.payload,
+		payload: payload,
 		gfr_distribution: testResult,
 		score: score,
 		score_str: scoreStr
 	}
 
-	fs.writeFileSync(path.join(cacheDir, filename + "-eval.json"), JSON.stringify(evaluatedPolyglot));
+	fs.writeFileSync(path.join(cacheDir, filename + "-eval.json"), JSON.stringify(evaluatedPolyglot, null, 4));
+
 
 	await firingRangeTester.close();
 }

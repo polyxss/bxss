@@ -78,5 +78,5 @@ export function writeFinalResultsToFile(polyglots: string[], summaryDir: string)
 	const finalOutput = JSON.stringify(output, null, "\t");
 
 	fs.mkdirSync(summaryDir);
-	fs.writeFileSync(path.join(summaryDir, "final-polyglots"), finalOutput);
+	fs.writeFileSync(path.join(summaryDir, "final-polyglots.json"), finalOutput);
 }

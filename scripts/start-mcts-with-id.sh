@@ -1,5 +1,4 @@
 #!/bin/bash
-
 if [ -z $1 ];
 then
 	echo "Usage: sh start-mcts-with-id.sh <custom run identifier>";
