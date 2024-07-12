@@ -228,3 +228,4 @@ Done
 - "Unable to launch browser, error message: Failed to launch the browser process!"
   - Pass `-e NO_SANDBOX="1"` to `docker run`
 - On Linux it may be necessary to enable `--add-host=host.docker.internal:host-gateway` in the Docker run command, for `host.docker.internal` to correctly resolve
+- Mac M1 and potentially above: We do not support M1 Macs, but reportedly, docker-compose.yml needs a change under `runner:`. Add `platform: linux/amd64`, it is currently in a comment.

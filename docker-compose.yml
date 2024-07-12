@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: testbed/Dockerfile
+    ports:
+      - "8080:8080"
 
   firingrange:
     restart: on-failure
@@ -15,6 +17,7 @@ services:
 
   runner:
     init: true
+    #platform: linux/amd64  # reportedly required for M1+ MacBooks
     environment:
       - NO_SANDBOX=${NO_SANDBOX:-0}
       - TESTBED_URL=http://testbed:8080
@@ -33,4 +36,4 @@ services:
     links:
       - testbed
       - firingrange
-    command: ${COMMAND:-"polytest.ts /usr/src/data/example.json /usr/src/data/polytest"}
+    command: ${COMMAND:- ./polytest.ts /usr/src/data/example.json /usr/src/data/polytest}

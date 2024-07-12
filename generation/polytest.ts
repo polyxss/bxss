@@ -68,7 +68,7 @@ async function processPayload(payload: string, firingRangeUrl: string, cacheDir:
 	}
 
 	fs.writeFileSync(path.join(cacheDir, filename + "-eval.json"), JSON.stringify(evaluatedPolyglot, null, 4));
-
+	console.log("Wrote to", path.join(cacheDir, filename + "-eval.json"));
 
 	await firingRangeTester.close();
 }
