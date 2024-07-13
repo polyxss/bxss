@@ -4,12 +4,14 @@ This is the companion repository for our USENIX Security submission. Follow this
 
 ## Tl;dr;
 
-Install `docker` and `docker compose`. Start MCTS polyglot synthesis with exemplary parameters, takes about 15 minutes and generates one polyglot.
+Install `docker` and `docker compose`. Call our scripts to start MCTS polyglot synthesis with exemplary parameters. It should take about 5-10 minutes and generate one polyglot.
+Evaluate it and stop the remaining containers with the respective scripts.
 
 ```bash
-$ USERID=$(id -u) GROUPID=$(id -g) RUN_IDENTIFIER=compose-test docker compose -p bxss-mcts up -d --build;  # up
-$ # ... wait
-$ docker compose -p bxss-mcts down;  # down
+./scripts/build.sh
+./scripts/1-basic-test.sh # quickest polyglot generation
+./scripts/5-eval.sh # choose a polyglot to evaluate
+./scripts/6-stop.sh
 ```
 
 Your polyglot will appear in the `payload` JSON field in the file `data/out/runs/run-<timestamp>/try-1/best-polyglot/bestOutput-00000final`.
